@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Haven Luxury Stays | US High-End Short-Let Residences</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#0B0F17',
+                        charcoal: '#141A26',
+                        cardBg: '#1A2232',
+                        gold: {
+                            400: '#E5C158',
+                            500: '#D4AF37',
+                            600: '#B59228',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0F17;
+            color: #F3F4F6;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA7C11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-bg-gradient {
+            background: linear-gradient(135deg, #E5C158 0%, #D4AF37 50%, #B59228 100%);
+        }
+        .gold-border {
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        .gold-border-focus:focus {
+            border-color: #D4AF37;
+            outline: none;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+        .glass-nav {
+            background: rgba(11, 15, 23, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .glass-card {
+            background: rgba(26, 34, 50, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-4px);
+            transition: all 0.3s ease;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0F17;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2A3447;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-obsidian text-gray-100 antialiased min-h-screen flex flex-col justify-between selection:bg-gold-500 selection:text-black">
+
+    <!-- Top Contact Strip -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="bg-charcoal border-b border-gray-800 text-xs py-2 px-4 sm:px-8 hidden md:block">
+            <div class="max-w-7xl mx-auto flex justify-between items-center text-gray-300">
+                <div class="flex items-center space-x-6">
+                    <span class="flex items-center text-gold-400 font-medium">
+                        <i class="fa-solid fa-shield-halved mr-2"></i> Verified US Ultra-Luxury Residences
+                    </span>
+                    <span class="text-gray-500">|</span>
+                    <span class="text-gray-400">24/7 VIP Concierge On Call</span>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="tel:+16469483938" class="hover:text-gold-400 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-phone text-gold-500"></i> Direct Call: +1 (646) 948-3938
+                    </a>
+                    <a href="https://wa.me/17472856787" target="_blank" class="hover:text-gold-400 transition flex items-center gap-1.5">
+                        <i class="fa-brands fa-whatsapp text-green-400"></i> WhatsApp: +1 (747) 285-6787
+                    </a>
+                    <a href="mailto:asset.management.offices@gmail.com" class="hover:text-gold-400 transition flex items-center gap-1.5">
+                        <i class="fa-regular fa-envelope text-gold-500"></i> asset.management.offices@gmail.com
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation Bar -->
+        <nav class="glass-nav border-b border-gray-800/80 px-4 sm:px-8 py-3.5">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-lg gold-bg-gradient flex items-center justify-center text-obsidian shadow-lg shadow-gold-500/20 group-hover:scale-105 transition">
+                        <i class="fa-solid fa-crown text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif text-xl sm:text-2xl font-bold tracking-wide gold-gradient block leading-none">GRAND HAVEN</span>
+                        <span class="text-[9px] uppercase tracking-[0.25em] text-gray-400 font-medium block mt-1">Luxury Stays • USA</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                    <a href="#estates" class="hover:text-gold-400 transition">Exclusive Estates</a>
+                    <a href="#amenities" class="hover:text-gold-400 transition">VIP Amenities</a>
+                    <a href="#concierge" class="hover:text-gold-400 transition">Personal Concierge</a>
+                    <a href="#contact" class="hover:text-gold-400 transition">Contact Host</a>
+                </div>
+
+                <!-- Action Button -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <a href="tel:+16469483938" class="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-gold-400 border border-gold-500/40 rounded-lg hover:bg-gold-500/10 transition">
+                        <i class="fa-solid fa-phone mr-1.5"></i> Direct Call
+                    </a>
+                    <a href="#estates" class="px-5 py-2 text-xs font-semibold uppercase tracking-wider text-obsidian gold-bg-gradient rounded-lg shadow-md hover:opacity-90 transition">
+                        Reserve Estate
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button id="mobileMenuBtn" class="lg:hidden text-gray-300 hover:text-gold-400 focus:outline-none p-2" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation Drawer -->
+            <div id="mobileMenu" class="hidden lg:hidden pt-4 pb-2 border-t border-gray-800 mt-3 space-y-3">
+                <a href="#estates" class="block px-3 py-2 rounded-md hover:bg-charcoal text-base font-medium">Exclusive Estates</a>
+                <a href="#amenities" class="block px-3 py-2 rounded-md hover:bg-charcoal text-base font-medium">VIP Amenities</a>
+                <a href="#concierge" class="block px-3 py-2 rounded-md hover:bg-charcoal text-base font-medium">Personal Concierge</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md hover:bg-charcoal text-base font-medium">Contact Host</a>
+                <div class="pt-3 border-t border-gray-800/80 flex flex-col gap-2">
+                    <a href="tel:+16469483938" class="w-full text-center py-2.5 text-xs uppercase font-bold tracking-wider text-gold-400 border border-gold-500/40 rounded-lg">
+                        <i class="fa-solid fa-phone mr-2"></i> Call +1 (646) 948-3938
+                    </a>
+                    <a href="https://wa.me/17472856787" target="_blank" class="w-full text-center py-2.5 text-xs uppercase font-bold tracking-wider text-green-400 border border-green-500/40 rounded-lg">
+                        <i class="fa-brands fa-whatsapp mr-2"></i> WhatsApp +1 (747) 285-6787
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow pt-28 md:pt-36">
+        <!-- Hero Banner -->
+        <section class="relative min-h-[85vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+            <!-- Background Image Carousel/Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2000&q=80" 
+                     alt="Luxury Estate Backdrop" 
+                     class="w-full h-full object-cover object-center filter brightness-[0.35]" 
+                     id="heroBgImage">
+                <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent"></div>
+            </div>
+
+            <div class="relative z-10 max-w-5xl mx-auto text-center space-y-6 pt-8 pb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-500/30 bg-obsidian/60 text-gold-400 text-xs uppercase font-semibold tracking-widest backdrop-blur-md">
+                    <i class="fa-solid fa-star text-xs"></i> Premier US High-Net-Worth Portfolio
+                </div>
+
+                <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-tight">
+                    Unrivaled Luxury.<br>
+                    <span class="gold-gradient italic font-normal">Extraordinary Destinations.</span>
+                </h1>
+
+                <p class="max-w-2xl mx-auto text-gray-300 text-base sm:text-lg font-light leading-relaxed">
+                    Experience private sanctuaries across America's most coveted coastal coves, city penthouses, and mountain retreats with 24/7 dedicated concierge service.
+                </p>
+
+                <!-- Dynamic Search & Filter Bar -->
+                <div class="mt-8 max-w-4xl mx-auto bg-charcoal/90 border border-gold-500/30 p-4 sm:p-6 rounded-2xl shadow-2xl backdrop-blur-xl">
+                    <form id="heroFilterForm" onsubmit="handleFilterSearch(event)" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
+                        <!-- Location Dropdown -->
+                        <div>
+                            <label class="block text-xs uppercase font-medium text-gold-400 tracking-wider mb-1">Destination</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-location-dot absolute left-3 top-3 text-gray-400 text-sm"></i>
+                                <select id="searchLocation" class="w-full bg-obsidian border border-gray-700 rounded-lg py-2.5 pl-9 pr-3 text-sm text-gray-200 focus:border-gold-500 focus:outline-none">
+                                    <option value="all">All US Luxury Markets</option>
+                                    <option value="miami">Miami Beach, FL</option>
+                                    <option value="malibu">Malibu, CA</option>
+                                    <option value="nyc">TriBeCa, NYC</option>
+                                    <option value="aspen">Aspen, CO</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Check-In Date -->
+                        <div>
+                            <label class="block text-xs uppercase font-medium text-gold-400 tracking-wider mb-1">Check-In</label>
+                            <div class="relative">
+                                <i class="fa-regular fa-calendar absolute left-3 top-3 text-gray-400 text-sm"></i>
+                                <input type="date" id="searchCheckIn" class="w-full bg-obsidian border border-gray-700 rounded-lg py-2 pl-9 pr-3 text-sm text-gray-200 focus:border-gold-500 focus:outline-none">
+                            </div>
+                        </div>
+
+                        <!-- Check-Out Date -->
+                        <div>
+                            <label class="block text-xs uppercase font-medium text-gold-400 tracking-wider mb-1">Check-Out</label>
+                            <div class="relative">
+                                <i class="fa-regular fa-calendar-check absolute left-3 top-3 text-gray-400 text-sm"></i>
+                                <input type="date" id="searchCheckOut" class="w-full bg-obsidian border border-gray-700 rounded-lg py-2 pl-9 pr-3 text-sm text-gray-200 focus:border-gold-500 focus:outline-none">
+                            </div>
+                        </div>
+
+                        <!-- Guests & Search Button -->
+                        <div>
+                            <label class="block text-xs uppercase font-medium text-gold-400 tracking-wider mb-1">Guests</label>
+                            <div class="flex gap-2">
+                                <div class="relative flex-grow">
+                                    <i class="fa-solid fa-user-group absolute left-3 top-3 text-gray-400 text-sm"></i>
+                                    <select id="searchGuests" class="w-full bg-obsidian border border-gray-700 rounded-lg py-2.5 pl-9 pr-2 text-sm text-gray-200 focus:border-gold-500 focus:outline-none">
+                                        <option value="1">1-2 Guests</option>
+                                        <option value="4">3-6 Guests</option>
+                                        <option value="8">7-10 Guests</option>
+                                        <option value="12">10+ VIP Guests</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="gold-bg-gradient text-obsidian px-4 py-2.5 rounded-lg font-bold hover:opacity-90 transition flex items-center justify-center">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="estates" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-gray-800/80 pb-6">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold block mb-1">Handpicked Portfolio</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Signature Luxury Residences</h2>
+                </div>
+                <p class="text-gray-400 text-sm max-w-md mt-2 md:mt-0">
+                    Each property features complete privacy, high-speed encrypted Wi-Fi, premium security, and dedicated on-demand staff options.
+                </p>
+            </div>
+
+            <!-- Property Grid -->
+            <div id="propertyGrid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Miami Beach Oceanfront Villa -->
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col group" data-location="miami">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Miami Beach Villa" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-obsidian/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-gold-500/40 text-gold-400 font-serif font-bold text-sm">
+                            $1,450 <span class="text-xs text-gray-300 font-sans font-normal">/ night</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 bg-obsidian/80 backdrop-blur-md px-3 py-1 rounded-md text-xs font-medium text-white flex items-center gap-1">
+                            <i class="fa-solid fa-location-dot text-gold-400"></i> Star Island, Miami Beach, FL
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-white mb-2">Miami Beach Oceanfront Villa</h3>
+                            <p class="text-gray-400 text-sm line-clamp-2">Direct Atlantic ocean access, expansive infinity pool, private dock, and floor-to-ceiling glass design.</p>
+                        </div>
+
+                        <!-- Amenities Tags -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs text-gray-300 pt-2 border-t border-gray-800">
+                            <div class="flex items-center gap-1.5"><i class="fa-solid fa-bed text-gold-400"></i> 6 Beds</div>
+                            <div class="flex items-center gap-1.5"><i class="fa-solid fa-bath text-gold-400"></i> 7 Baths</div>
+                            <div class="flex items-center gap-1.5"><i class="fa-solid fa-ruler-combined text-gold-400"></i> 7,800 sq ft</div>
+                            <div class="flex items-center gap-1.5"><i class="fa-solid fa-water-ladder text-gold-400"></i> Heated Pool</div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 text-[11px] text-gray-400">
+                            <span class="bg-charcoal px-2.5 py-1 rounded border border-gray-800"><i class="fa-solid fa-utensils text-gold-500/80 mr-1"></i>Private Chef</span>
+                            <span class="bg-charcoal px-2.5 py-1 rounded border border-gray-800"><i class="fa-solid fa-shield text-gold-500/80 mr-1"></i>24/7 Gated Security</span>
+                            <span class="bg-charcoal px-2.5 py-1 rounded border border-gray-800"><i class="fa-solid fa-anchor text-gold-500/80 mr-1"></i>Yacht Dock</span>
+                        </div>
+
+                        <div class="pt-4 flex gap-3">
+                            <button onclick="openBookingModal('Miami Beach Oceanfront Villa', 1450)" class="w-full gold-bg-gradient text-obsidian py-3 rounded-xl font-bold text-sm tracking-wider uppercase shadow-md hover:opacity-95 transition">
+                                Reserve Dates
+                            </button>
+                            <a href="tel:+16469483938" class="p-3 bg-charcoal border border-gold-500/30 text-gold-400 rounded-xl hover:bg-gold-500/10 transition flex items-center justify-center" title="Call Host Directly">
+                                <i class="fa-solid fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Malibu Private Cove Estate -->
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col group" data-location="malibu">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Malibu Estate" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-obsidian/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-gold-500/40 text-gold-400 font-serif font-bold text-sm">
+                            $2,200 <span class="text-xs text-gray-300 font-sans font-normal">/ night</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 bg-obsidian/80 backdrop-blur-md px-3 py-1 rounded-md text-xs font-medium text-white flex items-center gap-1">
+                            <i class="fa-solid fa-location-dot text-gold-400"></i> Malibu Coast, California
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-white mb-2">Malibu Private Cove Estate</h3>
+                            <p class="text-gray-400 text-sm line-clamp-2">Perched on private cliffs with direct beach stairs, wine cellar, wellness spa, and panoramic ocean views.</p>
+                        </div>
+
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs text-gray-300 pt-2 border-t border-gray-800">
+                            <div class="flex items-center gap-1.5"><i class="fa-solid fa-bed text-gold-400"></i> 5 Beds</div>
+                            <div class="flex items-center gap-1.5"><i class="fa-solid fa-bath text-gold-400"></i> 6 Baths</div>
+                            <div class="flex items-center gap-1.5"><i class="fa-solid fa-ruler-combined text-gold-400"></i> 6,500 sq ft</div>
+                            <div class="flex items-center gap-1.5"><i class="fa-solid fa-helicopter text-gold-400"></i> Helipad Access</div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 text-[11px] text-gray-400">
+                            <span class="bg-charcoal px-2.5 py-1 rounded border border-gray-800"><i class="fa-solid fa-wine-glass text-gold-500/80 mr-1"></i>Sommelier Cellar</span>
+                            <span class="bg-charcoal px-2.5 py-1 rounded border border-gray-800"><i class="fa-solid fa-hot-tub-person text-gold-500/80 mr-1"></i>Cliffside Spa</span>
+                            <span class="bg-charcoal px-2.5 py-1 rounded border border-gray-800"><i class="fa-solid fa-user-shield text-gold-500/80 mr-1"></i>Private Security</span>
+                        </div>
+
+                        <div class="pt-4 flex gap-3">
+                            <button onclick="openBookingModal('Malibu Private Cove Estate', 2200)" class="w-full gold-bg-gradient text-obsidian py-3 rounded-xl font-bold text-sm tracking-wider uppercase shadow-md hover:opacity-95 transition">
+                                Reserve Dates
+                            </button>
+                            <a href="tel:+16469483938" class="p-3 bg-charcoal border border-gold-500/30 text-gold-400 rounded-xl hover:bg-gold-500/10 transition flex items-center justify-center" title="Call Host Directly">
+                                <i class="fa-solid fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TriBeCa Sky Penthouse (NYC) -->
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col group" data-location="nyc">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80" 
+                             alt="TriBeCa Penthouse" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-obsidian/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-gold-500/40 text-gold-400 font-serif font-bold text-sm">
+                            $1,850 <span class="text-xs text-gray-300 font-sans font-normal">/ night</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 bg-obsidian/80 backdrop-blur-md px-3 py-1 rounded-md text-xs font-medium text-white flex items-center gap-1">
+                            <i class="fa-solid fa-location-dot text-gold-400"></i> TriBeCa, New York City
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-white mb-2">TriBeCa Sky Penthouse</h3>
+                            <p class="text-gray-400 text-sm line-clamp-2">Top-tier duplex architectural triumph with private rooftop terrace, heated plunge pool, and skyline views.</p>
+                        </div>
+
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs text-gray-300 pt-2 border-t border-gray-800">
+                            <div class="flex items-center gap-1.5"><i class="fa-solid fa-bed text-gold-400"></i> 4 Beds</div>
+                            <div class="flex items-center gap-1.5"><i class="fa-solid fa-bath text-gold-400"></i> 4.5 Baths</div>
+                            <div class="flex items-center gap-1.5"><i class="fa-solid fa-ruler-combined text-gold-400"></i> 5,200 sq ft</div>
+                            <div class="flex items-center gap-1.5"><i class="fa-solid fa-elevator text-gold-400"></i> Keyed Elevator</div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 text-[11px] text-gray-400">
+                            <span class="bg-charcoal px-2.5 py-1 rounded border border-gray-800"><i class="fa-solid fa-building-user text-gold-500/80 mr-1"></i>24/7 Doorman</span>
+                            <span class="bg-charcoal px-2.5 py-1 rounded border border-gray-800"><i class="fa-solid fa-champagne-glasses text-gold-500/80 mr-1"></i>Rooftop Bar</span>
+                            <span class="bg-charcoal px-2.5 py-1 rounded border border-gray-800"><i class="fa-solid fa-car text-gold-500/80 mr-1"></i>Private Garage</span>
+                        </div>
+
+                        <div class="pt-4 flex gap-3">
+                            <button onclick="openBookingModal('TriBeCa Sky Penthouse (NYC)', 1850)" class="w-full gold-bg-gradient text-obsidian py-3 rounded-xl font-bold text-sm tracking-wider uppercase shadow-md hover:opacity-95 transition">
+                                Reserve Dates
+                            </button>
+                            <a href="tel:+16469483938" class="p-3 bg-charcoal border border-gold-500/30 text-gold-400 rounded-xl hover:bg-gold-500/10 transition flex items-center justify-center" title="Call Host Directly">
+                                <i class="fa-solid fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aspen Private Ski Chalet -->
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col group" data-location="aspen">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Aspen Ski Chalet" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-obsidian/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-gold-500/40 text-gold-400 font-serif font-bold text-sm">
+                            $2,800 <span class="text-xs text-gray-300 font-sans font-normal">/ night</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 bg-obsidian/80 backdrop-blur-md px-3 py-1 rounded-md text-xs font-medium text-white flex items-center gap-1">
+                            <i class,="fa-solid fa-location-dot text-gold-400"></i> Red Mountain, Aspen, CO
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-white mb-2">Aspen Alpine Estate & Chalet</h3>
+                            <p class="text-gray-400 text-sm line-clamp-2">Ski-in / ski-out mountain masterpiece with private heated outdoor pool, sauna, cinema room, and driver service.</p>
+                        </div>
+
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs text-gray-300 pt-2 border-t border-gray-800">
+                            <div class="flex items-center gap-1.5"><i class="fa-solid fa-bed text-gold-400"></i> 7 Beds</div>
+                            <div class="flex items-center gap-1.5"><i class="fa-solid fa-bath text-gold-400"></i> 8 Baths</div>
+                            <div class="flex items-center gap-1.5"><i class="fa-solid fa-ruler-combined text-gold-400"></i> 9,200 sq ft</div>
+                            <div class="flex items-center gap-1.5"><i class="fa-solid fa-person-skiing text-gold-400"></i> Ski In / Out</div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 text-[11px] text-gray-400">
+                            <span class="bg-charcoal px-2.5 py-1 rounded border border-gray-800"><i class="fa-solid fa-fire text-gold-500/80 mr-1"></i>3 Hearth Fireplaces</span>
+                            <span class="bg-charcoal px-2.5 py-1 rounded border border-gray-800"><i class="fa-solid fa-film text-gold-500/80 mr-1"></i>Private Theater</span>
+                            <span class="bg-charcoal px-2.5 py-1 rounded border border-gray-800"><i class="fa-solid fa-van-shuttle text-gold-500/80 mr-1"></i>Private Chauffeur</span>
+                        </div>
+
+                        <div class="pt-4 flex gap-3">
+                            <button onclick="openBookingModal('Aspen Alpine Estate & Chalet', 2800)" class="w-full gold-bg-gradient text-obsidian py-3 rounded-xl font-bold text-sm tracking-wider uppercase shadow-md hover:opacity-95 transition">
+                                Reserve Dates
+                            </button>
+                            <a href="tel:+16469483938" class="p-3 bg-charcoal border border-gold-500/30 text-gold-400 rounded-xl hover:bg-gold-500/10 transition flex items-center justify-center" title="Call Host Directly">
+                                <i class="fa-solid fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="amenities" class="bg-charcoal/50 border-y border-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold">Bespoke Experience</span>
+                    <h2 class="font-serif text-3xl font-bold text-white mt-1">Five-Star Bespoke Services</h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 rounded-2xl bg-obsidian border border-gray-800 space-y-3">
+                        <div class="w-12 h-12 rounded-xl gold-bg-gradient flex items-center justify-center text-obsidian text-xl font-bold">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <h3 class="font-serif text-lg font-bold text-white">Dedicated House Butler</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Discrete and professional full-time household staff tailored to your private routine.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-obsidian border border-gray-800 space-y-3">
+                        <div class="w-12 h-12 rounded-xl gold-bg-gradient flex items-center justify-center text-obsidian text-xl font-bold">
+                            <i class="fa-solid fa-helicopter"></i>
+                        </div>
+                        <h3 class="font-serif text-lg font-bold text-white">Helipad & Jet Transfers</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Direct tarmac pick-ups and private helicopter transfers arranged effortlessly.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-obsidian border border-gray-800 space-y-3">
+                        <div class="w-12 h-12 rounded-xl gold-bg-gradient flex items-center justify-center text-obsidian text-xl font-bold">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <h3 class="font-serif text-lg font-bold text-white">Michelin-Starred Dining</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">In-residence private chefs preparing custom menus paired with rare wines.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-obsidian border border-gray-800 space-y-3">
+                        <div class="w-12 h-12 rounded-xl gold-bg-gradient flex items-center justify-center text-obsidian text-xl font-bold">
+                            <i class="fa-solid fa-shield-cat"></i>
+                        </div>
+                        <h3 class="font-serif text-lg font-bold text-white">Executive Protection</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Off-duty law enforcement or certified private security personnel upon request.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold">Direct Communication</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-1">Asset Management & Host Hub</h2>
+                <p class="text-gray-400 text-sm mt-2">Connect instantly with our US asset management team regarding bookings, corporate retreats, or custom stays.</p>
+            </div>
+
+            <!-- Prominent Direct Contact Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                <!-- Direct Phone Card -->
+                <a href="tel:+16469483938" class="glass-card p-6 rounded-2xl flex flex-col items-center text-center group">
+                    <div class="w-14 h-14 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
+                    <span class="text-xs uppercase tracking-wider text-gray-400 font-medium">Direct Call / Phone</span>
+                    <span class="font-serif text-xl font-bold text-white mt-1 group-hover:text-gold-400 transition">+1 (646) 948-3938</span>
+                    <span class="text-xs text-gold-500/80 mt-2 font-medium">Click to Call Host Directly</span>
+                </a>
+
+                <!-- SMS & WhatsApp Card -->
+                <a href="https://wa.me/17472856787" target="_blank" class="glass-card p-6 rounded-2xl flex flex-col items-center text-center group">
+                    <div class="w-14 h-14 rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center text-green-400 text-2xl mb-4 group-hover:scale-110 transition">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <span class="text-xs uppercase tracking-wider text-gray-400 font-medium">SMS & WhatsApp Desk</span>
+                    <span class="font-serif text-xl font-bold text-white mt-1 group-hover:text-green-400 transition">+1 (747) 285-6787</span>
+                    <div class="flex gap-3 mt-2">
+                        <span class="text-xs text-green-400 font-medium">WhatsApp</span>
+                        <span class="text-gray-600">•</span>
+                        <a href="sms:+17472856787" class="text-xs text-blue-400 font-medium hover:underline">Send SMS</a>
+                    </div>
+                </a>
+
+                <!-- Email Card -->
+                <a href="mailto:asset.management.offices@gmail.com" class="glass-card p-6 rounded-2xl flex flex-col items-center text-center group">
+                    <div class="w-14 h-14 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl mb-4 group-hover:scale-110 transition">
+                        <i class="fa-regular fa-envelope-open"></i>
+                    </div>
+                    <span class="text-xs uppercase tracking-wider text-gray-400 font-medium">Executive Email</span>
+                    <span class="font-serif text-base font-bold text-white mt-1 group-hover:text-gold-400 transition break-all">asset.management.offices@gmail.com</span>
+                    <span class="text-xs text-gold-500/80 mt-2 font-medium">Official Inquiry Inbox</span>
+                </a>
+            </div>
+
+            <!-- Inquiry Form Container -->
+            <div id="concierge" class="glass-card rounded-2xl p-6 sm:p-10 max-w-3xl mx-auto">
+                <h3 class="font-serif text-2xl font-bold text-white mb-2">Send a Priority Inquiry</h3>
+                <p class="text-gray-400 text-xs mb-6">Our asset managers respond within 15 minutes during market hours.</p>
+
+                <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs uppercase font-medium text-gray-300 mb-1">Full Name *</label>
+                            <input type="text" id="contactName" required class="w-full bg-obsidian border border-gray-700 rounded-lg p-3 text-sm text-gray-200 gold-border-focus" placeholder="Lord / Lady / Mr / Ms">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase font-medium text-gray-300 mb-1">Email Address *</label>
+                            <input type="email" id="contactEmail" required class="w-full bg-obsidian border border-gray-700 rounded-lg p-3 text-sm text-gray-200 gold-border-focus" placeholder="client@familyoffice.com">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs uppercase font-medium text-gray-300 mb-1">Phone Number *</label>
+                            <input type="tel" id="contactPhone" required class="w-full bg-obsidian border border-gray-700 rounded-lg p-3 text-sm text-gray-200 gold-border-focus" placeholder="+1 (555) 000-0000">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase font-medium text-gray-300 mb-1">Property of Interest</label>
+                            <select id="contactProperty" class="w-full bg-obsidian border border-gray-700 rounded-lg p-3 text-sm text-gray-200 gold-border-focus">
+                                <option value="General Inquiry">General / Portfolio Inquiry</option>
+                                <option value="Miami Villa">Miami Beach Oceanfront Villa</option>
+                                <option value="Malibu Estate">Malibu Private Cove Estate</option>
+                                <option value="NYC Penthouse">TriBeCa Sky Penthouse</option>
+                                <option value="Aspen Chalet">Aspen Private Ski Chalet</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase font-medium text-gray-300 mb-1">Message / Special Concierge Requirements</label>
+                        <textarea id="contactMessage" rows="4" required class="w-full bg-obsidian border border-gray-700 rounded-lg p-3 text-sm text-gray-200 gold-border-focus" placeholder="Specify requested dates, security requirements, or catering preferences..."></textarea>
+                    </div>
+
+                    <button type="submit" id="contactSubmitBtn" class="w-full gold-bg-gradient text-obsidian font-bold py-3.5 rounded-xl uppercase tracking-wider text-sm shadow-lg hover:opacity-95 transition flex items-center justify-center gap-2">
+                        <span>Send Executive Message</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div id="bookingModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-obsidian/80 backdrop-blur-md overflow-y-auto">
+        <div class="bg-charcoal border border-gold-500/40 rounded-2xl max-w-xl w-full p-6 sm:p-8 shadow-2xl relative my-8">
+            <!-- Close Button -->
+            <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl p-2">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="mb-6">
+                <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold block">Reserve Residence</span>
+                <h3 id="modalPropertyName" class="font-serif text-2xl font-bold text-white mt-1">Property Name</h3>
+                <p class="text-xs text-gray-400 mt-1">Nightly Rate: <span id="modalBaseRateDisplay" class="text-gold-400 font-bold">$0</span> USD</p>
+            </div>
+
+            <!-- Booking Form -->
+            <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="space-y-4">
+                <input type="hidden" id="modalPropertyNameInput">
+                <input type="hidden" id="modalBaseRateInput">
+
+                <!-- Dates Selection -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs uppercase font-medium text-gray-300 mb-1">Check-In Date *</label>
+                        <input type="date" id="bookCheckIn" required onchange="calculateTotal()" class="w-full bg-obsidian border border-gray-700 rounded-lg p-2.5 text-sm text-gray-200 gold-border-focus">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase font-medium text-gray-300 mb-1">Check-Out Date *</label>
+                        <input type="date" id="bookCheckOut" required onchange="calculateTotal()" class="w-full bg-obsidian border border-gray-700 rounded-lg p-2.5 text-sm text-gray-200 gold-border-focus">
+                    </div>
+                </div>
+
+                <!-- Guest Count -->
+                <div>
+                    <label class="block text-xs uppercase font-medium text-gray-300 mb-1">Total Guests *</label>
+                    <select id="bookGuests" required class="w-full bg-obsidian border border-gray-700 rounded-lg p-2.5 text-sm text-gray-200 gold-border-focus">
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        <option value="4" selected>3 - 4 Guests</option>
+                        <option value="6">5 - 6 Guests</option>
+                        <option value="8">7+ Guests (VIP Party)</option>
+                    </select>
+                </div>
+
+                <!-- Price Summary Box -->
+                <div class="bg-obsidian/80 border border-gray-800 rounded-xl p-4 text-xs space-y-2">
+                    <div class="flex justify-between text-gray-300">
+                        <span id="rateBreakdownText">$0 x 0 nights</span>
+                        <span id="subtotalDisplay" class="font-medium">$0</span>
+                    </div>
+                    <div class="flex justify-between text-gray-300">
+                        <span>Estate Deep Cleaning Fee</span>
+                        <span>$350</span>
+                    </div>
+                    <div class="flex justify-between text-gray-300">
+                        <span>US State Tourism Tax (12%)</span>
+                        <span id="taxDisplay">$0</span>
+                    </div>
+                    <div class="border-t border-gray-800 pt-2 flex justify-between font-bold text-sm text-gold-400">
+                        <span>Estimated Total (USD)</span>
+                        <span id="totalDisplay">$0</span>
+                    </div>
+                </div>
+
+                <!-- Guest Information -->
+                <div class="space-y-3 pt-2">
+                    <div>
+                        <label class="block text-xs uppercase font-medium text-gray-300 mb-1">Full Name *</label>
+                        <input type="text" id="bookName" required class="w-full bg-obsidian border border-gray-700 rounded-lg p-2.5 text-sm text-gray-200 gold-border-focus" placeholder="John Doe">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs uppercase font-medium text-gray-300 mb-1">Email Address *</label>
+                            <input type="email" id="bookEmail" required class="w-full bg-obsidian border border-gray-700 rounded-lg p-2.5 text-sm text-gray-200 gold-border-focus" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase font-medium text-gray-300 mb-1">Phone / Mobile *</label>
+                            <input type="tel" id="bookPhone" required class="w-full bg-obsidian border border-gray-700 rounded-lg p-2.5 text-sm text-gray-200 gold-border-focus" placeholder="+1 (555) 000-0000">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase font-medium text-gray-300 mb-1">Special Concierge Requests</label>
+                        <textarea id="bookRequests" rows="2" class="w-full bg-obsidian border border-gray-700 rounded-lg p-2.5 text-sm text-gray-200 gold-border-focus" placeholder="Airport pick-up, wine preference, daily maid service..."></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" id="bookSubmitBtn" class="w-full gold-bg-gradient text-obsidian font-bold py-3.5 rounded-xl uppercase tracking-wider text-xs shadow-lg hover:opacity-95 transition mt-4">
+                    Submit Reservation Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="fixed bottom-0 left-0 right-0 z-40 bg-obsidian/95 border-t border-gold-500/30 p-2 sm:hidden backdrop-blur-lg">
+        <div class="grid grid-cols-4 gap-1.5 text-center text-[10px] font-bold">
+            <a href="tel:+16469483938" class="flex flex-col items-center py-2 px-1 rounded-lg bg-charcoal text-gold-400 border border-gold-500/30 active:scale-95 transition">
+                <i class="fa-solid fa-phone text-base mb-1"></i>
+                <span>Call Host</span>
+            </a>
+            <a href="https://wa.me/17472856787" target="_blank" class="flex flex-col items-center py-2 px-1 rounded-lg bg-charcoal text-green-400 border border-green-500/30 active:scale-95 transition">
+                <i class="fa-brands fa-whatsapp text-base mb-1"></i>
+                <span>WhatsApp</span>
+            </a>
+            <a href="sms:+17472856787" class="flex flex-col items-center py-2 px-1 rounded-lg bg-charcoal text-blue-400 border border-blue-500/30 active:scale-95 transition">
+                <i class="fa-solid fa-comment-sms text-base mb-1"></i>
+                <span>SMS Host</span>
+            </a>
+            <a href="mailto:asset.management.offices@gmail.com" class="flex flex-col items-center py-2 px-1 rounded-lg bg-charcoal text-gray-200 border border-gray-700 active:scale-95 transition">
+                <i class="fa-solid fa-envelope text-base mb-1"></i>
+                <span>Email Us</span>
+            </a>
+        </div>
+    </div>
+
+    <footer class="bg-obsidian border-t border-gray-800 text-gray-400 text-xs py-12 px-4 sm:px-6 lg:px-8 mb-14 sm:mb-0">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="space-y-3">
+                <div class="flex items-center space-x-2">
+                    <div class="w-7 h-7 rounded gold-bg-gradient flex items-center justify-center text-obsidian font-bold">
+                        <i class="fa-solid fa-crown text-xs"></i>
+                    </div>
+                    <span class="font-serif font-bold text-white text-base">Grand Haven Luxury Stays</span>
+                </div>
+                <p class="text-gray-400 leading-relaxed text-[11px]">
+                    Curated high-net-worth residence portfolio across key metropolitan and luxury resort destinations in the United States.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-serif text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Residences</h4>
+                <ul class="space-y-2 text-[11px]">
+                    <li><a href="#estates" class="hover:text-gold-400 transition">Miami Beach Oceanfront Villa</a></li>
+                    <li><a href="#estates" class="hover:text-gold-400 transition">Malibu Private Cove Estate</a></li>
+                    <li><a href="#estates" class="hover:text-gold-400 transition">TriBeCa Sky Penthouse</a></li>
+                    <li><a href="#estates" class="hover:text-gold-400 transition">Aspen Private Ski Chalet</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-serif text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Host Direct Contact</h4>
+                <ul class="space-y-2 text-[11px]">
+                    <li><a href="tel:+16469483938" class="hover:text-gold-400 transition"><i class="fa-solid fa-phone mr-1.5 text-gold-500"></i> +1 (646) 948-3938</a></li>
+                    <li><a href="https://wa.me/17472856787" target="_blank" class="hover:text-green-400 transition"><i class="fa-brands fa-whatsapp mr-1.5 text-green-400"></i> +1 (747) 285-6787</a></li>
+                    <li><a href="sms:+17472856787" class="hover:text-blue-400 transition"><i class="fa-solid fa-comment-sms mr-1.5 text-blue-400"></i> SMS: +1 (747) 285-6787</a></li>
+                    <li><a href="mailto:asset.management.offices@gmail.com" class="hover:text-gold-400 transition break-all"><i class="fa-regular fa-envelope mr-1.5 text-gold-500"></i> asset.management.offices@gmail.com</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-serif text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Compliance & Security</h4>
+                <p class="text-gray-400 text-[11px] leading-relaxed mb-3">
+                    All listings are fully vetted and insured. Direct host communication for discreet identity verification.
+                </p>
+                <span class="inline-block px-2.5 py-1 bg-charcoal border border-gold-500/30 rounded text-[10px] text-gold-400 font-medium">
+                    <i class="fa-solid fa-lock mr-1"></i> Encrypted Direct Booking
+                </span>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto border-t border-gray-800/60 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center text-[11px] text-gray-500">
+            <p>© <span id="currentYear"></span> Grand Haven Luxury Stays LLC. All rights reserved.</p>
+            <p class="mt-2 sm:mt-0">High-End US Short-Let Residences</p>
+        </div>
+    </footer>
+
+    <script>
+        // Supabase REST Configuration
+        const SUPABASE_URL = 'https://zfjkljaejaxxweduyehg.supabase.co/rest/v1/bookings';
+        const SUPABASE_KEY = 'sb_publishable_mZoRql897zOKAPivUQTnWg_8_klvvZy';
+
+        // Set Default Dates in Forms
+        window.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 2);
+
+            const formatDate = (date) => date.toISOString().split('T')[0];
+
+            document.getElementById('searchCheckIn').value = formatDate(today);
+            document.getElementById('searchCheckOut').value = formatDate(tomorrow);
+            document.getElementById('bookCheckIn').value = formatDate(today);
+            document.getElementById('bookCheckOut').value = formatDate(tomorrow);
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Search Filter Logic
+        function handleFilterSearch(event) {
+            event.preventDefault();
+            const selectedLocation = document.getElementById('searchLocation').value;
+            const cards = document.querySelectorAll('#propertyGrid > div');
+
+            cards.forEach(card => {
+                const cardLoc = card.getAttribute('data-location');
+                if (selectedLocation === 'all' || selectedLocation === cardLoc) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Smooth Scroll to estates
+            document.getElementById('estates').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Modal Logic
+        function openBookingModal(propertyName, rate) {
+            document.getElementById('modalPropertyName').textContent = propertyName;
+            document.getElementById('modalPropertyNameInput').value = propertyName;
+            document.getElementById('modalBaseRateInput').value = rate;
+            document.getElementById('modalBaseRateDisplay').textContent = '$' + rate.toLocaleString();
+
+            calculateTotal();
+            document.getElementById('bookingModal').classList.remove('hidden');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+        }
+
+        // Real-time Pricing Calculation
+        function calculateTotal() {
+            const rate = parseFloat(document.getElementById('modalBaseRateInput').value) || 0;
+            const checkInVal = document.getElementById('bookCheckIn').value;
+            const checkOutVal = document.getElementById('bookCheckOut').value;
+
+            if (!checkInVal || !checkOutVal) return;
+
+            const checkIn = new Date(checkInVal);
+            const checkOut = new Date(checkOutVal);
+            
+            let diffTime = checkOut - checkIn;
+            let nights = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            
+            if (nights <= 0) nights = 1; // Default minimum 1 night safety fallback
+
+            const cleaningFee = 350;
+            const subtotal = rate * nights;
+            const tax = Math.round((subtotal + cleaningFee) * 0.12);
+            const grandTotal = subtotal + cleaningFee + tax;
+
+            document.getElementById('rateBreakdownText').textContent = `$${rate.toLocaleString()} x ${nights} night${nights > 1 ? 's' : ''}`;
+            document.getElementById('subtotalDisplay').textContent = `$${subtotal.toLocaleString()}`;
+            document.getElementById('taxDisplay').textContent = `$${tax.toLocaleString()}`;
+            document.getElementById('totalDisplay').textContent = `$${grandTotal.toLocaleString()}`;
+        }
+
+        // Post to Supabase Helper
+        async function postToSupabase(payload) {
+            try {
+                const response = await fetch(SUPABASE_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'apikey': SUPABASE_KEY,
+                        'Authorization': `Bearer ${SUPABASE_KEY}`,
+                        'Prefer': 'return=minimal'
+                    },
+                    body: JSON.stringify(payload)
+                });
+                return response.ok;
+            } catch (err) {
+                console.error("Supabase REST Error:", err);
+                return false;
+            }
+        }
+
+        // Handle Booking Form Submit
+        async function handleBookingSubmit(event) {
+            event.preventDefault();
+            const submitBtn = document.getElementById('bookSubmitBtn');
+            const origText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Processing Request...';
+            submitBtn.disabled = true;
+
+            const bookingData = {
+                property_name: document.getElementById('modalPropertyNameInput').value,
+                check_in: document.getElementById('bookCheckIn').value,
+                check_out: document.getElementById('bookCheckOut').value,
+                guests: document.getElementById('bookGuests').value,
+                guest_name: document.getElementById('bookName').value,
+                guest_email: document.getElementById('bookEmail').value,
+                guest_phone: document.getElementById('bookPhone').value,
+                special_requests: document.getElementById('bookRequests').value,
+                total_usd: document.getElementById('totalDisplay').textContent,
+                created_at: new Date().toISOString()
+            };
+
+            const success = await postToSupabase(bookingData);
+
+            if (success) {
+                alert(`Thank you, ${bookingData.guest_name}! Your reservation request for ${bookingData.property_name} has been received. Our asset team (+1 646-948-3938) will contact you shortly to confirm.`);
+                closeBookingModal();
+                document.getElementById('bookingForm').reset();
+            } else {
+                // Fallback direct mailto if REST fails
+                const mailtoUrl = `mailto:asset.management.offices@gmail.com?subject=Reservation Request: ${encodeURIComponent(bookingData.property_name)}&body=Name: ${encodeURIComponent(bookingData.guest_name)}%0D%0APhone: ${encodeURIComponent(bookingData.guest_phone)}%0D%0ADates: ${bookingData.check_in} to ${bookingData.check_out}%0D%0ATotal: ${bookingData.total_usd}%0D%0ARequests: ${encodeURIComponent(bookingData.special_requests)}`;
+                window.location.href = mailtoUrl;
+                alert("Reservation request generated! Your email client has been opened to dispatch directly to management.");
+                closeBookingModal();
+            }
+
+            submitBtn.innerHTML = origText;
+            submitBtn.disabled = false;
+        }
+
+        // Handle Contact Form Submit
+        async function handleContactSubmit(event) {
+            event.preventDefault();
+            const submitBtn = document.getElementById('contactSubmitBtn');
+            const origText = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'Sending...';
+            submitBtn.disabled = true;
+
+            const contactData = {
+                guest_name: document.getElementById('contactName').value,
+                guest_email: document.getElementById('contactEmail').value,
+                guest_phone: document.getElementById('contactPhone').value,
+                property_name: document.getElementById('contactProperty').value,
+                special_requests: document.getElementById('contactMessage').value,
+                created_at: new Date().toISOString()
+            };
+
+            const success = await postToSupabase(contactData);
+
+            if (success) {
+                alert(`Thank you, ${contactData.guest_name}. Your message was sent directly to our asset management team. We will reply via email or call (+1 646-948-3938).`);
+                document.getElementById('contactForm').reset();
+            } else {
+                const mailtoUrl = `mailto:asset.management.offices@gmail.com?subject=Concierge Inquiry: ${encodeURIComponent(contactData.property_name)}&body=Name: ${encodeURIComponent(contactData.guest_name)}%0D%0APhone: ${encodeURIComponent(contactData.guest_phone)}%0D%0AMessage: ${encodeURIComponent(contactData.special_requests)}`;
+                window.location.href = mailtoUrl;
+            }
+
+            submitBtn.innerHTML = origText;
+            submitBtn.disabled = false;
+        }
+    </script>
+</body>
+</html>
